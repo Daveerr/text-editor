@@ -21,7 +21,7 @@ export const putDb = async (content) => {
   const id = await store.add({ content });
   await tx.complete;
   console.log("content added with the id: ${id}");
-  return result;
+  return id;
 };
 // TODO: Add logic for a method that gets all the content from the database
 export const fetchList = async () => {
