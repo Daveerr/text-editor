@@ -11,13 +11,18 @@ butInstall.addEventListener("click", async () => {
   events.preventDefault();
   // alert for when clicked
   alert("Button Clicked!");
-  butInstall();
+  //butInstall();
+  const promptEvent = window.beforeinstallpromptEvent;
+  if (promptEvent) {
+    promptEvent.prompt();
+  } else {
+  }
 });
 
 // TODO: Add an handler for the `appinstalled` event
 window.addEventListener("appinstalled", (event) => {
   event.preventDefault();
-  const jate = butInstall.elements["jate"].value;
+  const jate = document.getElementById["jate"].value;
 
   putDb(jate);
   format.reset();
