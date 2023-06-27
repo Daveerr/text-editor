@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
-//added workbox plugins
+//added workbox plugin
 const { InjectManifest } = require("workbox-webpack-plugin");
 
 module.exports = () => {
@@ -21,7 +21,7 @@ module.exports = () => {
         template: "./index.html",
         title: "jate",
       }),
-      // custom service worker
+      // service worker
       new InjectManifest({
         swSrc: "./src-sw.js",
         swDest: "./src-sw.js",
